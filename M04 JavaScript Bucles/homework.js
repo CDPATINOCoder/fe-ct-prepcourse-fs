@@ -30,7 +30,7 @@ function mayoriaDeEdad(edad) {
    }
    else
    {
-      return "Not Allowed";
+      return "Not allowed";
    }
 }
 
@@ -134,7 +134,7 @@ function estaEnRango(num) {
    // Retornar true si "num" es menor que 50 y mayor que 20.
    // De lo contrario, retornar false.
    // Tu código:
-   if (num < 50 && num >> 20)
+   if (num < 50 && num > 20)
    {
       return true;
    }
@@ -195,7 +195,30 @@ function operadoresLogicos(num1, num2, num3) {
    // Si todos los argumentos son cero, retornar ---> "Error".
    // Si no se cumple ninguna de las condiciones anteriores, retornar false.
    // Tu código:
+   if ((num1 > num2 && num1 > num3) && ( num1 > 0))
+   {
+      return "Numero 1 es mayor y positivo";
+   }
+   if (num1 < 0 || num2 < 0 || num3 < 0)
+   {
+      return "Hay negativos";
+   }
+   if (num3 > num1 && num3 > num2)
+   {
+      num3 += 1;
+      return num3;
+   }
+   if (num1 === 0 && num2 === 0 && num3 === 0)
+   {
+      return "Error";
+   }
+   else
+   {
+      return false;
+   }
 }
+
+operadoresLogicos(1,2,3);
 
 function esPrimo(num) {
    // Retornar true si "num" es primo.
@@ -204,26 +227,69 @@ function esPrimo(num) {
    // [Pista 2]: puedes resolverlo utilizando un `bucle for`.
    // [Nota]: los números negativos, 0 y 1 NO son números primos.
    // Tu código:
+   var contador;
+   contador = 0;
+   for (let i=1 ; num >= i ; i++)
+   {
+      if (num % i === 0)
+      {
+         contador = contador + 1;
+      }
+   }
+   if (contador === 2)
+   {
+      return true;
+   }
+   else
+   {
+      return false;
+   }
 }
+
+   console.log(esPrimo(4));
+
+   esPrimo(3);
 
 function esVerdadero(valor) {
    // Si "valor" es verdadero retornar "Soy verdadero".
    // Caso contrario, retornar "Soy falso".
    // Tu código:
+   if (valor)
+   return "Soy verdadero";
+   else
+   return "Soy falso";
 }
+
+esVerdadero(true);
 
 function tieneTresDigitos(num) {
    // Si el número recibido tiene tres dígitos retornar true.
    // Caso contrario, retornar false.
    // Tu código:
+   if ((num > 99 && num < 1000) || (num > -1000 && num < -99))
+   {
+      return true;
+   }
+   else
+      return false;
 }
+
+tieneTresDigitos(99);
 
 function doWhile(num) {
    // Implementar una función que aumente el valor recibido en 5 hasta un límite de 8 veces.
    // Retornar el valor final.
    // Utilizar el bucle Do-While.
    // Tu código:
+   var i = 0;
+   do {
+      num = num + 5;
+       i = i + 1;
+   } while (i>=1 && i<=7);
+   return num;
 }
+
+doWhile(2);
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/
 module.exports = {
