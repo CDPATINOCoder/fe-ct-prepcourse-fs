@@ -257,7 +257,7 @@ function tablaDelSeis() {
    // La función devuelve un arreglo con los resultados de la tabla de multiplicar del 6 en orden creciente.
    // Tu código:+
    var tabla = [];
-   for (let i=1 ; i<11 ; i++)
+   for (let i=0 ; i<11 ; i++)
    {
       tabla.push(6*i);
    }
@@ -270,7 +270,19 @@ function mayorACien(array) {
    // La función recibe un arreglo con enteros entre 0 y 200.
    // Recorrerlo y retornar un arreglo con todos los valores mayores a 100 (no incluye el 100).
    // Tu código:
+   let mayoracien = [];
+   for (let i=0 ; i<array.length ; i++)
+   {
+      if (array[i]>100)
+      {
+         mayoracien.push(array[i]);
+      }
+   }
+   return mayoracien;
 }
+
+var arreglo2 = [2,3,200,100,101,102,120,201];
+console.log(mayorACien(arreglo2));
 
 /* ----------------------------------------------------------------------------------
 💪 EXTRA CREDIT EXTRA CREDIT EXTRA CREDIT EXTRA CREDIT EXTRA CREDIT  EXTRA CREDIT 💪
@@ -283,7 +295,30 @@ function breakStatement(num) {
    // la ejecución y retornar el string: "Se interrumpió la ejecución".
    // [PISTA]: utiliza el statement 'break'.
    // Tu código:
+   let nuevoArreglo = [];
+   let doble = 0;
+   let interrumpio = false;
+   doble = num + 2;
+   for (let i=0 ; i<10 ; i++)
+   {
+      nuevoArreglo.push(doble);
+      doble = doble + 2;
+      if (doble === i)
+      {
+         break;
+      }
+   }
+   if (nuevoArreglo.length === 10)
+   {
+      return nuevoArreglo;
+   }
+   else
+   {
+      return "Se interrumpió la ejecución";
+   }
 }
+var numero = 2;
+console.log(breakStatement(numero));
 
 function continueStatement(num) {
    // Iterar en un bucle aumentando en 2 el número recibido hasta un límite de 10 veces.
@@ -292,7 +327,23 @@ function continueStatement(num) {
    // se continua con la siguiente iteración.
    // [PISTA]: utiliza el statement 'continue'.
    // Tu código:
+   let nuevoarreglo2 = [];
+   let nro = 0;
+   nro = num + 2;
+   for (let i=0 ; i<10 ; i++)
+   {
+      if (i === 5)
+      {
+         continue;
+      }
+      nuevoarreglo2.push(nro);
+      nro = nro + 2;
+   }
+   return nuevoarreglo2;
 }
+
+let n = 50;
+console.log(continueStatement(n));
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/
 module.exports = {
